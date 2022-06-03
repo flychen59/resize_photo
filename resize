@@ -1,0 +1,14 @@
+
+import cv2
+import os
+import glob
+
+path = r'C:\Users\flychen\Desktop\2011_10_03_drive_0042_sync_03'
+path_file=os.listdir(path)
+print(path_file)
+for i in path_file:
+
+ im1 = cv2.imread(path+'\\'+i)
+ im2 = cv2.resize(im1, (128, 128))
+ cv2.imwrite(os.path.join(path, os.path.basename(i)), im2)
+
